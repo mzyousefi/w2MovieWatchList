@@ -1,12 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddMovieForm from './components/AddMovieForm';
 import ListMovie from './components/ListMovie';
 import Card from './components/Card';
 import Summary from './components/Summary';
+import SelectInput from './components/SelectInput';
 
 function createId() {
   if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
@@ -89,9 +88,10 @@ function App() {
       prev.filter(item => item.id !== movie_id)
     );
   }
-const totalMovies=movie.length;
-const watchCount=(movie.filter((item)=>item.watched>0)).length
-const unWatchCount=(movie.filter((item)=>item.watched==0)).length
+  const totalMovies = movie.length;
+  const watchCount = (movie.filter((item) => item.watched > 0)).length
+  const unWatchCount = (movie.filter((item) => item.watched == 0)).length
+
   return (
     <>
       <div className='container'>
@@ -99,15 +99,13 @@ const unWatchCount=(movie.filter((item)=>item.watched==0)).length
           <AddMovieForm genres={listGenre} addClick={addNewMovie} />
         </Card>
         <Card nameClass="summary_part" title="summary">
-          <Summary totalMovies={totalMovies} watchCount={watchCount} unWatchedCount={unWatchCount}/>
+          <Summary totalMovies={totalMovies} watchCount={watchCount} unWatchedCount={unWatchCount} />
         </Card>
         <Card nameClass="list_movie_section" title="Movies" right={
           <div className='filter_part'>
-            <select className='form-control'
-              value={filter}
-              onChange={e => setFilter(e.target.value)}>
+            <SelectInput value={filter} onChangeF={setFilter} >
               {listFilter}
-            </select>
+            </SelectInput>
           </div>
         }>
           <ListMovie items={listMovie} />

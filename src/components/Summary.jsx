@@ -7,7 +7,7 @@ export default function Summary({ totalMovies, watchCount,unWatchedCount }) {
           <SummaryCard label="unWatch Count" value={unWatchedCount} />
         </div>
   
-        {totalMovies==watchCount && (
+        {(totalMovies>0 && totalMovies==watchCount) && (
           <div className="success_alert">
             You watched everything!
           </div>
