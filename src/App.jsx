@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
- import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import AddMovieForm from './components/AddMovieForm';
 import ListMovie from './components/ListMovie';
 import Card from './components/Card';
