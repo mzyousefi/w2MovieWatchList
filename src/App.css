@@ -4,17 +4,88 @@ width: 100%;
   overflow: hidden;
   padding: 20px 0;
 }
+.container{
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+@media (min-width: 1400px) {
+  .container {
+      max-width: 1320px;
+  }
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 .error{
   font-size: 13px;
   color: rgb(219, 12, 12);
+}
+
+.h_part{
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center !important;
+  justify-content: space-between !important;
+  display: flex !important;
+}
+.mb-2 {
+  margin-bottom: .5rem !important;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-clip: padding-box;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  margin: 0;
 }
 .form-control:focus{
   outline: none !important;
   box-shadow: unset !important;
 }
-.h_part{
-  flex-wrap: wrap;
-  gap: 15px;
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.me-2{
+  margin-right:8px
+}
+.table{
+  width: 100%;
+  margin-bottom: 1rem;
+  vertical-align: top;
+}
+.table>thead {
+  vertical-align: bottom;
+}
+tbody, td, tfoot, th, thead, tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
 }
 .table tr:last-child td{
   border-bottom-color: transparent;
@@ -54,4 +125,19 @@ width: 100%;
 .success_alert {
   color: green;
   font-weight: 600;
+}
+.card {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 14px;
+}
+.card-body {
+  padding: 14px;
+  flex: 1 1 auto;
+}
+@media (min-width: 1200px) {
+  .h3, h3 {
+      font-size: 1.75rem;
+  }
 }
